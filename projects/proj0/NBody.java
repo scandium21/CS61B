@@ -58,8 +58,33 @@ public class NBody {
         
         /* Shows the drawing to the screen, and waits 2000 milliseconds. */
 		StdDraw.show();
-        StdDraw.pause(2000);
+        StdDraw.pause(1000);
         
+        double time = 0;
+        while (time<T) {
+            double[] xForces = new double[allBodies.length];
+            double[] yForces = new double[allBodies.length];
+            
+            for (int i=0;i<allBodies.length;i++) {
+                xForces[i] = allBodies[i].calcNetForceExertedByX(allBodies);
+                yForces[i] = allBodies[i].calcNetForceExertedByY(allBodies);
+
+                allBodies[i].update(dt, xForces[i], yForces[i]);
+            }
+
+            /* Draw universe background. */
+            StdDraw.picture(0, 0, "images/starfield.jpg");
+
+            /* Draw each body in the Body array */
+            for (Body b : allBodies) {
+                b.draw();
+            }
+
+            StdDraw.show();
+            StdDraw.pause(10);
+
+            time += dt;
+        }
 
 
     }
