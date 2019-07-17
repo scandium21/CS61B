@@ -24,12 +24,42 @@ public class NBody {
     public static void main(String[] args) {
         // int N = args.length;
         // int i = 0;
-        // Read in the universe from the txt file
+        
+        // Store the 0th and 1st command line arguments as doubles 
         double T = Double.parseDouble(args[0]);
         double dt = Double.parseDouble(args[1]);
         String filename = args[2];
+        // Read in the universe from the txt file
+        double radius = readRadius(filename);
         Body[] allBodies = readBodies(filename);
 
+        /** Enables double buffering.
+		  * A animation technique where all drawing takes place on the offscreen canvas.
+		  * Only when you call show() does your drawing get copied from the
+		  * offscreen canvas to the onscreen canvas, where it is displayed
+		  * in the standard drawing window. */
+        StdDraw.enableDoubleBuffering();
+        
+        /** Sets up the universe so it matches the 
+         * radius of the universe both x and y range from (-2.5e11 to 2.5e11)
+		*/
+        StdDraw.setScale(-2.5e11, 2.5e11);
+        
+        /* Clears the drawing window. */
+        StdDraw.clear();
+
+        /* Draw universe background. */
+        StdDraw.picture(0, 0, "images/starfield.jpg");
+
+        /* Draw each body in the Body array */
+        for (Body b : allBodies) {
+            b.draw();
+        }
+        
+        /* Shows the drawing to the screen, and waits 2000 milliseconds. */
+		StdDraw.show();
+        StdDraw.pause(2000);
+        
 
 
     }
