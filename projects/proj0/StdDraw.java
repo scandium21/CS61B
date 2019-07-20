@@ -101,7 +101,7 @@ import javax.swing.KeyStroke;
  *  If you compile and execute the program, you should see a window
  *  appear with a thick magenta line and a blue point.
  *  This program illustrates the two main types of methods in standard
- *  drawing—methods that draw geometric shapes and methods that
+ *  drawing-methods that draw geometric shapes and methods that
  *  control drawing parameters.
  *  The methods {@code StdDraw.line()} and {@code StdDraw.point()}
  *  draw lines and points; the methods {@code StdDraw.setPenRadius()}
@@ -332,7 +332,7 @@ import javax.swing.KeyStroke;
  *  <p>
  *  By default, double buffering is disabled, which means that as soon as you
  *  call a drawing
- *  method—such as {@code point()} or {@code line()}—the
+ *  method such as {@code point()} or {@code line()} the
  *  results appear on the screen.
  *  <p>
  *  When double buffering is enabled by calling {@link #enableDoubleBuffering()},
@@ -422,7 +422,7 @@ import javax.swing.KeyStroke;
  *  <li> Any method that is passed a {@code null} argument will throw an
  *       {@link IllegalArgumentException}.
  *  <li> Except as noted in the APIs, drawing an object outside (or partly outside)
- *       the canvas is permitted—however, only the part of the object that
+ *       the canvas is permitted, however, only the part of the object that
  *       appears inside the canvas will be visible.
  *  <li> Except as noted in the APIs, all methods accept {@link Double#NaN},
  *       {@link Double#POSITIVE_INFINITY}, and {@link Double#NEGATIVE_INFINITY}

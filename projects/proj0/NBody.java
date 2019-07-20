@@ -86,7 +86,14 @@ public class NBody {
             time += dt;
         }
 
-
+        /** After time has reached, print out updated locations of the planets */
+        StdOut.printf("%d\n", allBodies.length);
+        StdOut.printf("%.2e\n", radius);
+        for (int i = 0; i < allBodies.length; i++) {
+            StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
+                        allBodies[i].xxPos, allBodies[i].yyPos, allBodies[i].xxVel,
+                        allBodies[i].yyVel, allBodies[i].mass, allBodies[i].imgFileName);   
+        }
     }
 
 }
