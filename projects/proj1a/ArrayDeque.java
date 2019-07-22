@@ -13,7 +13,9 @@ public class ArrayDeque <Type> {
     public ArrayDeque(ArrayDeque other) {
         ArrayDeque newCopy = new ArrayDeque();
         newCopy.size = other.size;
-
+        for (int i=0;i<other.size();i++) {
+            addLast((Type)get(i));
+        }
     }
 
     /** Resizes array to larger capacity */

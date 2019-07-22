@@ -25,8 +25,14 @@ public class LinkedListDeque<Type> {
 
     /** Creates a deep copy of 'other' */
     public LinkedListDeque(LinkedListDeque other) {
+        sentinel = new Node(null,null,null);
+        sentinel.next = sentinel;
+        sentinel.prev = sentinel;
+        size = 0;
 
-
+        for (int i = 0; i<other.size(); i += 1) {
+            addLast((Type) other.get(i));
+        }
     }
 
     /** Adds an item of certain Type to the front of the deque */
