@@ -12,7 +12,7 @@ public class ArrayDeque <Type> {
     /** Creates a deep copy of 'other' */
     public ArrayDeque(ArrayDeque other) {
         ArrayDeque newCopy = new ArrayDeque();
-        newCopy.size = other.size;
+        newCopy.size = other.size();
         for (int i=0;i<other.size();i++) {
             addLast((Type)get(i));
         }

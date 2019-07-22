@@ -28,7 +28,7 @@ public class LinkedListDeque<Type> {
         sentinel = new Node(null,null,null);
         sentinel.next = sentinel;
         sentinel.prev = sentinel;
-        size = 0;
+        size = other.size();
 
         for (int i = 0; i<other.size(); i += 1) {
             addLast((Type) other.get(i));
