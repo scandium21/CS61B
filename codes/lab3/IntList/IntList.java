@@ -4,18 +4,19 @@ import java.util.Formatter;
  * A naked recursive list of integers, similar to what we saw in lecture 3, but
  * with a large number of additional methods.
  *
- * @author P. N. Hilfinger, with some modifications by Josh Hug and melaniecebula
+ * @author P. N. Hilfinger, with some modifications by
+ * Josh Hug and melaniecebula
  *         [Do not modify this file.]
  */
 public class IntList {
     /**
      * First element of list.
      */
-    public int first;
+    private int first;
     /**
      * Remaining elements of list.
      */
-    public IntList rest;
+    private IntList rest;
 
     /**
      * A List with first FIRST0 and rest REST0.
@@ -81,11 +82,11 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        if (A == null)
+        if (A == null) {
             return B;
-        else if (B == null)
+        } else if (B == null) {
             return A;
-        else {
+        } else {
             IntList ptr = A;
             while (ptr.rest != null) {
                 ptr = ptr.rest;
@@ -100,18 +101,38 @@ public class IntList {
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        IntList AB = new IntList(A.first,null);
-        IntList ptr = AB;
+        IntList ab = new IntList(A.first, null);
+        IntList ptr = ab;
         while (A.rest != null) {
             A = A.rest;
-            ptr.rest = new IntList(A.first,null);
+            ptr.rest = new IntList(A.first, null);
             ptr = ptr.rest;
         }
-        ptr.rest=B;
-        return AB;
+        ptr.rest = B;
+        return ab;
     }
 
+    /**
+     * Returns the reverse of the given IntList.
+     * This method is destructive. If given null
+     * as an input, returns null.
+     * @param A
+     */
+    public static IntList reverse(IntList A) {
+        if (A == null || A.rest == null) {
+            return A;
+        }
 
+        IntList ptr = A.rest;
+        A.rest = null;
+        while (ptr != null) {
+            IntList temp = ptr.rest;
+            ptr.rest = A;
+            A = ptr;
+            ptr = temp;
+        }
+        return A;
+    }
 
 
 
@@ -191,6 +212,7 @@ public class IntList {
      * even use this method. The point of this method is so that if you convert
      * an IntList into a String and that IntList has a loop, your computer
      * doesn't get stuck in an infinite loop.
+     * @param A
      */
 
     private int detectCycles(IntList A) {
