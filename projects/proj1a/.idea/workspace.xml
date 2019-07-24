@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7f42d0a-61ac-45b8-ba86-1254a173689f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Discussion/disc03/SLList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Discussion/disc03/SLListLauncher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Discussion/disc03/arrays.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Discussion/disc03/disc03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Discussion/disc03/disc03.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Discussion/disc02/disc02examprep.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../lectureCode-sp19" beforeDir="false" afterPath="$PROJECT_DIR$/../../lectureCode-sp19" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LinkedListDeque.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -43,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArrayDeque.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="912">
@@ -112,6 +118,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -197,17 +204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LinkedListDeque.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-          <folding>
-            <element signature="e#1431#1432#0" expanded="true" />
-            <element signature="e#1458#1459#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ArrayDeque.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="912">
@@ -215,6 +211,17 @@
           <folding>
             <element signature="e#1125#1126#0" expanded="true" />
             <element signature="e#1152#1153#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinkedListDeque.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding>
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#1458#1459#0" expanded="true" />
           </folding>
         </state>
       </provider>
