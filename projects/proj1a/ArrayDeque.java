@@ -30,6 +30,8 @@ public class ArrayDeque <Type> {
         if(size == items.length) {
             resize(size * 2);
         }
+        Type[] a = (Type[]) new Object[size * 2];
+        System.arraycopy(items, 0, a, 1, size);
         items[0] = item;
         size += 1;
     }

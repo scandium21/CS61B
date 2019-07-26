@@ -12,7 +12,7 @@
  size: The number of items in the list should be size.
 */
 
-public class AList<Item> {
+public class AList<Item> implements List61B<Item> {
     private Item[] items;
     private int size;
 
@@ -22,18 +22,6 @@ public class AList<Item> {
         size = 0;
     }
 
-    /** Inserts item into given position.
-     * Code from discussion #3 */
-    public void insert(Item x, int position) {
-        Item[] newItems = (Item[]) new Object[items.length + 1];
-
-        System.arraycopy(items, 0, newItems, 0, position);
-        newItems[position] = x;
-
-        System.arraycopy(items, position, newItems, position + 1, items.length - position);
-        items = newItems;
-    }
-
     /** Resizes the underlying array to the target capacity. */
     private void resize(int capacity) {
         Item[] a = (Item[]) new Object[capacity];
@@ -41,46 +29,73 @@ public class AList<Item> {
         items = a;
     }
 
-    /** Inserts an item at the front. */
-    public void addFirst(Item x) {
-        insert(x, 0);
+    /** Adds an item of certain Type to the front of the deque */
+    @Override
+    public void addFirst(Item item) {
+        if(size == items.length) {
+            resize(size * 2);
+        }
+        Item[] a = (Item[]) new Object[size * 2];
+        System.arraycopy(items, 0, a, 1, size);
+        items[0] = item;
+        size += 1;
     }
 
     /** Inserts X into the back of the list. */
+    @Override
     public void addLast(Item x) {
         if (size == items.length) {
-            resize(size + 1);
+            resize(size * 2);
         }
 
         items[size] = x;
         size = size + 1;
     }
 
-    /** Gets an item from the front. */
+    /** Inserts X into a given position of the list. */
+    @Override
+    public void insert(Item x, int position) {
+        Item[] newItems = (Item[]) new Object[items.length + 1];
+        position = Math.min(items.length, position);
+
+        System.arraycopy(items, 0, newItems, 0, position);
+        newItems[position] = x;
+
+        System.arraycopy(items, position, newItems, position + 1, items.length - position);
+        items = newItems;
+        size += 1;
+    }
+
+    /** Returns the item at the front of the list. */
+    @Override
     public Item getFirst() {
-        return get(0);
+        return items[0];
     }
 
     /** Returns the item from the back of the list. */
+    @Override
     public Item getLast() {
         return items[size - 1];
     }
     /** Gets the ith item in the list (0 is the front). */
+    @Override
     public Item get(int i) {
         return items[i];
     }
 
     /** Returns the number of items in the list. */
+    @Override
     public int size() {
         return size;
     }
 
     /** Deletes item from back of the list and
       * returns deleted item. */
+    @Override
     public Item removeLast() {
         Item x = getLast();
         items[size - 1] = null;
-        size = size - 1;
+        size -= 1;
         return x;
     }
-}
+} 
