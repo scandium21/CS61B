@@ -3,6 +3,7 @@ public class VengefulSLList<Item> extends SLList<Item> {
     SLList<Item> deletedItems;
 
     public VengefulSLList() {
+        super();
         deletedItems = new SLList<Item> ();
     }
 
