@@ -16,7 +16,7 @@ public class testUnionFind {
         int r2 = u.find(2);
 
         assertEquals(3, r2);
-        assertEquals(5, u.find(5));
+        assertEquals(5, u.find(8));
         assertTrue(u.connected(2,3));
         assertTrue(u.connected(4,5));
         assertFalse(u.connected(3,7));

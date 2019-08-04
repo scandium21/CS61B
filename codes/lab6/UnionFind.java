@@ -1,4 +1,4 @@
-import java.util.NoSuchElementException;
+
 
 public class UnionFind {
 
@@ -19,7 +19,7 @@ public class UnionFind {
     private void validate(int vertex) {
         // TODO
         if (vertex < 0 || vertex >= vindex.length) {
-            throw new NoSuchElementException("Not a valid vertex.");
+            throw new IllegalArgumentException("Not a valid vertex.");
         }
     }
 
@@ -72,9 +72,20 @@ public class UnionFind {
        allowing for fast search-time. */
     public int find(int vertex) {
         // TODO
-        if (vindex[vertex] < 0)
-            return vertex;
-        return find(vindex[vertex]);
+        int ind = vindex[vertex];
+        int n = vertex;
+        while ( ind >= 0) {
+            n = ind;
+            ind = vindex[ind];
+            // path compression
+            vindex[vertex] = n;
+        }
+
+        return n;
+//        if (vindex[vertex] < 0) {
+//            return vertex;
+//        }
+//        return find(vindex[vertex]);
     }
 
 }
