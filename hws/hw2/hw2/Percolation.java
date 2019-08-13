@@ -14,7 +14,7 @@ public class Percolation {
         grid = new boolean[N][N];
         size = N;
         siteOpen = 0;
-        // two extra sites for main top and bottom connector
+        // two extra sites for virtue top and bottom connector
         connectedSites = new WeightedQuickUnionUF(N*N + 2);
         // set all sites to blocked
         for(int i = 0; i < N; i+=1) {
@@ -49,10 +49,10 @@ public class Percolation {
     public void open(int row, int col) {
         if (!grid[row][col]) {
             siteOpen += 1;
+            grid[row][col] = true;
+            int siteIndex = xyTo1D(row, col);
+            connectNeighbors(row, col, siteIndex);
         }
-        grid[row][col] = true;
-        int siteIndex = xyTo1D(row, col);
-        connectNeighbors(row, col, siteIndex);
     }
 
     // is the site (row, col) open?
@@ -63,11 +63,7 @@ public class Percolation {
     // is the site (row, col) full?
     public boolean isFull(int row, int col) {
         int siteIndex = xyTo1D(row, col);
-
-        if (connectedSites.connected(size*size,siteIndex)) {
-            return true;
-        }
-        return false;
+        return connectedSites.connected(size*size,siteIndex); 
     }
 
     // number of open sites
@@ -86,10 +82,7 @@ public class Percolation {
                 connectedSites.union(size*(size-1)+i,size*size+1);
             }
         }
-        if (connectedSites.connected(size*size, size*size+1)) {
-            return true;
-        }
-        return false;
+        return connectedSites.connected(size*size, size*size+1);
     }
 
     // use for unit testing (not required, but keep this here for the autograder)
