@@ -1,0 +1,32 @@
+ This program inserts lexicographically increasing Stringsinto Maps as <String, Integer> pairs.
+
+Enter # strings to insert into ULLMap: 20000
+class ULLMap: 3.56 sec
+
+Enter # strings to insert into MyHashMap: 80000
+class MyHashMap: 0.17 sec
+
+Enter # strings to insert into Java's HashMap: 80000
+Java's Built-in HashMap: 0.08 sec
+
+Would you like to try more timed-tests? (y/n): y
+
+Enter # strings to insert into ULLMap: 10000
+class ULLMap: 0.53 sec
+
+Enter # strings to insert into MyHashMap: 40000
+class MyHashMap: 0.05 sec
+
+Enter # strings to insert into Java's HashMap: 40000
+Java's Built-in HashMap: 0.03 sec
+
+Would you like to try more timed-tests? (y/n): y
+
+Enter # strings to insert into ULLMap: 25000
+--Stack Overflow -- couldn't add 25000 strings.
+
+Enter # strings to insert into MyHashMap: 100000
+class MyHashMap: 0.13 sec
+
+Enter # strings to insert into Java's HashMap: 100000
+Java's Built-in HashMap: 0.10 sec
